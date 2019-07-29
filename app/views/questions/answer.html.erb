@@ -1,0 +1,23 @@
+<div class="quote">
+  <%= @question = params[:question] %>
+  <br>
+  <p><em>- You</em></p>
+</div>
+
+<br>
+
+<div class="quote answer">
+  <% @question = params[:question] %>
+  <% if @question.downcase == "i am going to work" %>
+    <strong><%= "Great!" %></strong>
+  <% elsif @question.end_with?("?") %>
+    <strong><%= "Silly question, get dressed and go to work!" %></strong>
+  <% else %>
+    <strong><%= "I don't care, get dressed and go to work!" %></strong>
+  <% end %>
+  <p><em>- Your coach</em></p>
+</div>
+
+<br>
+
+<%= link_to "Ask a new question", answer_path %>
